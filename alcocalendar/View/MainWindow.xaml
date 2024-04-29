@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:alcocalendar"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="400">
+        Title="MainWindow" Height="500" Width="400">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="400*"/>
         </Grid.RowDefinitions>
-        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click" Width="395"/>
-        <Frame x:Name="PageFrame" Content="" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top"  Width="395"/>
+        <Frame x:Name="pageFrame" Content="" Grid.Row="1" NavigationUIVisibility="Hidden"/>
 
     </Grid>
 </Window>
