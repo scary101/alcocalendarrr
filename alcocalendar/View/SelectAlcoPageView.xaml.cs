@@ -21,10 +21,10 @@ namespace alcocalendar.View
     /// </summary>
     public partial class SelectAlcoPageView : Page
     {
-        public SelectAlcoPageView()
+        public SelectAlcoPageView(DateTime date)
         {
             InitializeComponent();
-            DataContext = new SelectAlcoViewModel();
+            DataContext = new SelectAlcoViewModel(date);
         }
     }
 }

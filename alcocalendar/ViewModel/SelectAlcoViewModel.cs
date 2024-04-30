@@ -11,14 +11,16 @@ using System.Threading.Tasks;
 
 namespace alcocalendar.ViewModel
 {
-    internal class SelectAlcoViewModel : BindHelper
+    public class SelectAlcoViewModel : BindHelper
     {
         public ObservableCollection<SelectAlcoUCViewModel> userconrol { get; set; }
-        public List<SelectAlcoModel> alcos {  get; set; }
+        private List<SelectAlcoModel> alcos {  get; set; }
         public BindCommand Save {  get; private set; }
+        public DateTime date { get; set; }
 
-        public SelectAlcoViewModel()
+        public SelectAlcoViewModel(DateTime date)
         {
+            this.date = date.Date;
             Save = new BindCommand(_ => SaveCard());
             alcos = new List<SelectAlcoModel>
             {
@@ -39,6 +41,7 @@ namespace alcocalendar.ViewModel
                 userconrol.Add(card);
             }
         }
+
         public void SaveCard()
         {
             List<SelectDay> days = SerDeser.DeserData<SelectDay>("zametki.json");
@@ -47,13 +50,13 @@ namespace alcocalendar.ViewModel
             {
                 if (userconrol[i].Selected == true)
                 {
+                    alcos[i].isChosee = true;
                     alco.Add(alcos[i]);
-                    alco[i].isChosee = true;
+                    
                 }
             }
             if(alco != null)
             {
-                DateTime date = DateTime.Now;
                 SelectDay day = new SelectDay(date);
                 day.alcolist = alco;
                 days.Add(day);

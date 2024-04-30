@@ -59,7 +59,7 @@ namespace alcocalendar.ViewModel
 
         public void Open()
         {
-            _navigationService.NavigateTo("SelectAlcoPageView");
+            _navigationService.NavigateTo("SelectAlcoPageView", Date);
         }
     }
 
