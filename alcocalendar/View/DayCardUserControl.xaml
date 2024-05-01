@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="alcocalendar.View.DayCardUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:alcocalendar.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="60" d:DesignWidth="60" Cursor="">
+    <Button Command="{Binding OpenAlcoMenu}" Width="60" Height="60" Padding="0" Cursor="">
+        <Grid Height="60" Width="60">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="7*"/>
+            </Grid.RowDefinitions>
+            <Image Source="{Binding Image}" Margin="5,5,5,1" Grid.Row="1"/>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding DayNumber}" VerticalAlignment="Center" Height="17" FontSize="12" Width="54" />
+        </Grid>
+    </Button>
+
+</UserControl>
